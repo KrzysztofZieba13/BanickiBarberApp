@@ -1,0 +1,25 @@
+doctype html
+html
+  head 
+    include _head
+  body 
+    section.section-edit
+      include _editNav
+      
+      .edit-content
+        .edit-box
+          h2.secondary-header Edycja Strony głównej
+          form.form.form--edit-landingPage
+            .form-group   
+              label.form__label(for='title-edit') Tytuł
+              input#title-edit.form__input
+            .form-group   
+              label.form__label(for='description-edit') Opis
+              textarea#description-edit.form__textarea
+            .form-group 
+              label.form__label(for='bookingLink-edit') Rezerwacja Link
+              input#bookingLink-edit.form__input
+            .form-group
+              input.btn.btn-update(type='submit' value='Aktualizuj')
+
+                

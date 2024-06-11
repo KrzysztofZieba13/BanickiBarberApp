@@ -1,0 +1,131 @@
+.section--admin-hello {
+  max-width: 140rem;
+  margin: 0 auto;
+  padding: 1.2rem 3.2rem 0 3.2rem;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.admin--hello-fullscreen {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.admin--hello-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-shadow: 0px 0px 13px 7px rgba(19, 19, 19, 0.3);
+  padding: 6.4rem 3.2rem 12.8rem 3.2rem;
+}
+
+.admin--hello-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8rem;
+}
+
+.edit--nav-panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  width: 70%;
+  /* margin: 6.4rem auto 0 auto; */
+  /* transform: translateY(-50%); */
+}
+
+.edit--nav-panel:link,
+.edit--nav-panel:visited {
+  background-color: #2e3192;
+  font-size: 2.4rem;
+  text-align: center;
+  padding: 3.2rem 0;
+  transition: all 0.3s;
+}
+
+.edit--nav-panel:hover,
+.edit--nav-panel:active {
+  background-color: #171a1d;
+}
+
+.header-admin {
+  text-align: center;
+}
+
+.edit-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-left: 4.4rem;
+  gap: 3.2rem;
+  margin-top: 6.4rem;
+}
+
+/**********************/
+/******LOGIN PAGE******/
+/**********************/
+.section-login {
+  max-width: 140rem;
+  padding: 1.2rem 3.2rem 3.2rem 3.2rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3.2rem;
+  height: 100%;
+}
+.loginpage-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-container {
+  width: 50rem;
+  align-self: center;
+  box-shadow: 0px 0px 13px 7px rgba(19, 19, 19, 0.3);
+  padding: 4.8rem 3.2rem;
+  margin-top: 12.8rem;
+}
+
+.login-header {
+  margin-bottom: 3.2rem;
+}
+
+.btn--auth-submit {
+  background-color: #2e3192;
+  border: none;
+  font-size: 2.4rem;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.3s;
+  padding: 1.2rem;
+}
+
+.btn--auth-submit:hover {
+  background-color: #171a1d;
+}
+
+.forgot--password-btn {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 1.2rem;
+  color: #868e96;
+  border-bottom: 1px solid #868e96;
+  max-width: 100%;
+  padding-bottom: 0.2rem;
+  cursor: pointer;
+}
+.form-group.email--form-group {
+  margin-bottom: 0rem;
+}
+
+.buttons-admin {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}

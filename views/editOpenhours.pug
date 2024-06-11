@@ -1,0 +1,39 @@
+doctype html
+html
+  head 
+    include _head
+  body 
+    .edit--openhours-modal.hidden 
+      ion-icon(name="close-outline").edit--close-modal.openhour--modal-close__btn
+      span.edit--modal-info Wypełnij tylko pola do aktualizacji
+      form.modal--update-openhours
+        .modal--form-group
+          label.modal-label(for='name-modal-edit-openhours') Dzień tygodnia
+          input#name-modal-edit-openhours.modal_input
+        .modal--form-group
+          label.modal-label(for='openHour-modal-edit-openhours') Godzina Otwarcia
+          input#openHour-modal-edit-openhours.modal_input
+        .modal--form-group
+          label.modal-label(for='closeHour-modal-edit-openhours') Godzina zamknięcia
+          input#closeHour-modal-edit-openhours.modal_input
+        .modal--form-group__checkbox
+          label.modal-label(for='isClosed-modal-edit-openhours') Nieczynne?
+          input#isClosed-modal-edit-openhours(type='checkbox').modal__checkbox
+        button.modal--edit-btn Aktualizuj
+    .overlay-edit.hidden
+
+    section.section-edit
+      include _editNav
+      .edit-content
+        .edit-box
+          h2.secondary-header Edycja Godzin Otwarcia
+          .edit--openhours-grid 
+            each open in landingPage[0].openHours
+              .edit--openhour-day 
+                p.edit__service--name-pl= open.name
+              .edit--openhour-hours 
+                span.edit-openhour-openhours= `${open.isClosed ? 'zamknięte' : `${open.openHour ? open.openHour : '00:00'}-${open.closeHour ? open.closeHour : '00:00'}`}`
+              .edit--service-btns 
+                button.edit--openhour-edit(data-openhour-id=open._id)
+                  ion-icon(name="pencil-outline")
+

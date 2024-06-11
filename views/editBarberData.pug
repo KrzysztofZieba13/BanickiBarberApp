@@ -1,0 +1,47 @@
+doctype html
+html
+  head 
+    include _head
+  body 
+    section.section-edit
+      include _editNav
+      .edit-content
+        .edit-box
+          h2.secondary-header Edycja Danych
+          .edit--barber-photo
+            h4.fourth-header Zmień Zdjęcie
+            form.edit--barber-upload 
+              input.choose-images(type='file' accept='image/*' id='edit-photo') 
+              .edit--upload-images
+                button.btn--action-images.btn-blue Aktualizuj 
+
+          .edit--barber-data 
+            .edit--plain-data 
+              h4.fourth-header Zmień Dane
+              form.form.form--edit-barberdata.form--edit-barberdata-plain
+                .form-group
+                  label.form__label(for='name-edit') Imię
+                  input#name-edit.form__input
+                .form-group
+                  label.form__label(for='surname-edit') Nazwisko
+                  input#surname-edit.form__input
+                .form-group
+                  label.form__label(for='address-edit') Adres
+                  input#address-edit.form__input
+                .form-group
+                  label.form__label(for='telephoneNumber-edit') Telefon
+                  input#telephoneNumber-edit.form__input(type='tel')
+                button.btn--action-images.btn-blue Aktualizuj 
+              .edit--password-data 
+                h4.fourth-header Zmień Hasło
+                form.form.form--edit-barberdata.form--edit-barberdata-password
+                  .form-group
+                    label.form__label(for='passwordCurrent-edit') Obecno Hasło
+                    input#passwordCurrent-edit.form__input(type='password' autocomplete="on")
+                  .form-group
+                    label.form__label(for='password-edit') Nowe Hasło
+                    input#password-edit.form__input(type='password' autocomplete="on")
+                  .form-group
+                    label.form__label(for='passwordConfirm-edit') Powtórz Hasło
+                    input#passwordConfirm-edit.form__input(type='password' autocomplete="on")
+                  button.btn--action-images.btn-blue Aktualizuj 

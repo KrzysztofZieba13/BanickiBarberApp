@@ -1,0 +1,22 @@
+doctype html
+html
+  head 
+    include _head
+    link(rel='stylesheet' href='/css/admin.css')
+  body 
+    section.section-login
+      include _loginNav
+      
+      .login-container
+        h3.third-header.login-header Panel Barbera
+        form.form.login-form
+          .form-group
+            label.form__label(for='email-login') E-mail
+            input.form__input#email-login(type='email')
+          .form-group.email--form-group
+            label.form__label(for='password-login') Hasło
+            input.form__input#password-login(type='password' autocomplete='on')
+          .form-group
+            a.link.forgot--password-btn(href='/zapomnialem-hasla') Nie pamiętam hasła
+          input.btn--auth-submit(type='submit' value='Zaloguj')
+          

@@ -1,0 +1,21 @@
+nav.landing--page-nav 
+  a(class='nav-logo' href='#landingPage' )
+    img(class='nav--logo-img' src="./img/background/logo1.png", alt="banicki barber logo")
+  .nav-items 
+    .landing--page-navBox1
+      a(class='nav-text link' href='#testimonials') Opinie 
+      a(class='nav-text link' href='#gallery') Galeria
+      a(class='nav-text link' href='#tablecost') Cennik
+      a(class='nav-text link' href='#contact') Kontakt 
+      a(class='nav-text link' href='#road') Trasa
+    .landing--page-navBox2
+      if user
+        a(class='btn link logout-btn') Wyloguj
+        a(class='btn btn-blue link ' href='/admin') Panel Admina
+
+      else
+        a(class='btn btn-blue link' target='_blank' href=`${landingPage[0].bookingLink}`) Rezerwacja
+        
+  button.mobile--navs-btns 
+    ion-icon(class='open-nav mobile--nav-btn' name="menu-outline")
+    ion-icon(class='close-nav mobile--nav-btn' name="close-outline")

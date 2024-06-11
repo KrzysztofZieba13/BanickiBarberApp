@@ -1,0 +1,35 @@
+doctype html
+html
+  head 
+    include _head
+  body 
+    section.section-edit
+      include _editNav
+      .edit-content
+        .edit-box.edit-maproute
+          h2.secondary-header Edycja Mapy i Trasy
+          .edit--howto-map 
+            h4.fourth-header Gdzie znaleźć współrzędne lat i lng?
+            p.text Google maps: Prawy klawisz myszki na lokal, pierwsza wartość to lat, druga lng.
+            .howto--map-img
+              img(src='../img/background/howto.png' alt='instrukcja gdzie znaleźć lat i lng')
+          .edit-coordinates   
+            h4.fourth-header Edytuj Współrzędne
+            form.edit--coordinates-form
+              .edit__coordinates--form-group 
+                label.edit--cordinates-label(for='lat-input') Lat 
+                input#lat-input.edit--coordinates-input.form__input
+              .edit__coordinates--form-group 
+                label.edit--cordinates-label(for='lng-input') Lng 
+                input#lng-input.edit--coordinates-input.form__input
+              button.btn--maproute-update.btn-blue Aktualizuj 
+
+          .edit-route
+            h4.fourth-header Edytuj Trasę
+            form.edit--route-form
+              .edit__route--form-group 
+                label.edit--route-label(for='route-input') Trasa (link) 
+                input#routeLink-input.edit--route-input.form__input
+              button.btn--route-link-update.btn-blue Aktualizuj 
+
+

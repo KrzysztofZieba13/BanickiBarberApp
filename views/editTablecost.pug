@@ -1,0 +1,61 @@
+doctype html
+html
+  head 
+    include _head
+  body 
+    .edit--tablecost-modal.hidden.edit-modal
+      ion-icon(name="close-outline").edit--close-modal
+      span.edit--modal-info Wypełnij tylko pola do aktualizacji
+      form.modal--form-edit-tablecost
+        .modal--form-group
+          label.modal-label(for='modal--titlePL-edit') Tytuł PL
+          input#titlePL--modal-edit.modal_input
+        .modal--form-group
+          label.modal-label(for='modal--titleEN-edit') Tytuł EN
+          input#titleEN--modal-edit.modal_input
+        .modal--form-group
+          label.modal-label(for='price--modal-edit') Cena
+          input#price--modal-edit(type='number').modal_input
+        button.modal--edit-btn Aktualizuj
+      
+    .delete--tablecost-modal.hidden.edit-modal
+      span.delete--modal-info Czy napewno usunąć?
+      .confirm-btns
+        button.modal--edit-btn.delete--service-confirm Tak
+        button.modal--edit-btn.cancel--service-confirm Nie
+      
+    .overlay-edit.hidden
+      
+    section.section-edit
+      include _editNav
+      .edit-content
+        .edit-box
+          h2.secondary-header Edycja Usług
+          .edit--tablecost
+            h4.fourth-header Edytuj/Usuń Usługę
+            .edit--tablecost-grid 
+              each service in landingPage[0].services
+                .edit--service-name 
+                  p.edit__service--name-pl= service.titlePL
+                  p.edit__service--name-en= service.titleEN
+                .edit--service-cost= `${service.price} zł`
+                .edit--service-btns(data-service-id=`${service._id}`) 
+                  button.edit--service-edit
+                    ion-icon(name="pencil-outline")
+                  button.edit--service-remove
+                    ion-icon(name="trash-outline")
+
+          .edit--tablecost-add 
+            .edit--tablecost
+              h4.fourth-header Dodaj Usługę
+              form.form.form--edit-tablecost
+                .form-group
+                  label.form__label(for='titlePL-edit') Tytuł PL
+                  input#titlePL-edit.form__input
+                .form-group
+                  label.form__label(for='titleEN-edit') Tytuł EN
+                  input#titleEN-edit.form__input
+                .form-group
+                  label.form__label(for='price-edit') Cena
+                  input#price-edit.form__input(type='number')
+                button.btn--tablecost-action.btn-blue Dodaj Usługę 

@@ -1,0 +1,362 @@
+/* BELOW 1264px*/
+@media (max-width: 79em) {
+  .section--landing-page {
+    height: 100vh;
+  }
+
+  .primary-header {
+    font-size: 4.4rem;
+  }
+
+  .hero--client-img {
+    width: 17rem;
+  }
+
+  .face-testimonial {
+    width: 3rem;
+  }
+
+  .testimonials-container {
+    max-width: 100rem;
+  }
+
+  .testimonials {
+    gap: 5.2rem;
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-btns {
+    margin-top: 3.2rem;
+  }
+
+  .testimonial {
+    justify-content: flex-start;
+  }
+
+  .gallery-tablecost-container {
+    grid-template-columns: 1.5fr 1fr;
+  }
+
+  .tablecost {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  #map {
+    width: 48rem;
+    height: 44rem;
+  }
+
+  .footer-grid {
+    gap: 4.4rem;
+  }
+}
+
+@media (max-width: 76em) {
+  html {
+    font-size: 56.25%;
+  }
+  .section--admin-hello {
+    overflow: auto !important;
+  }
+
+  .edit--nav-panels {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/*BRLOW 1088px*/
+@media (max-width: 68em) {
+  html {
+    font-size: 48%;
+  }
+
+  .section--landing-page {
+    height: auto;
+  }
+
+  .hero-col_1 {
+    width: 60%;
+  }
+
+  .hero--client-img {
+    width: 15rem;
+  }
+
+  .gallery-tablecost-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 5.2rem;
+  }
+
+  .gallery .gallery-page {
+    max-width: 40rem;
+    height: 48rem;
+  }
+
+  .gallery-images {
+    width: 40rem;
+  }
+
+  .gallery-menu {
+    width: 40rem;
+  }
+
+  .tablecost {
+    /* background-image: url(../img/background/fotel2.png); */
+    background-size: 80%;
+  }
+
+  .footer-container {
+    gap: 6.4rem;
+  }
+
+  .nav-items {
+    background-color: #171a1d;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6.4rem;
+    transform: translateX(100%);
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+  }
+
+  .nav-open .nav-items {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .landing--page-navBox1 {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  .landing--page-navBox1 a,
+  .landing--page-navBox2 a {
+    font-size: 2.4rem !important;
+  }
+
+  .nav-open .mobile--nav-btn[name='close-outline'] {
+    display: block;
+    z-index: 1000;
+  }
+
+  .mobile--nav-btn[name='menu-outline'] {
+    display: block;
+  }
+
+  .nav-open .mobile--nav-btn[name='menu-outline'] {
+    display: none;
+  }
+}
+
+/*BELOW 832px*/
+@media (max-width: 56em) {
+  .section--landing-page {
+    height: auto;
+  }
+
+  .tablecost {
+    background-size: 100%;
+  }
+
+  .map {
+    margin-bottom: 0;
+  }
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .contact--column-left {
+    grid-row: 2;
+  }
+
+  .contact--column-right {
+    margin-top: 1.2rem;
+  }
+
+  .barber-hours {
+    display: flex;
+    gap: 4.4rem;
+    margin-bottom: 6.4rem;
+    justify-content: center;
+    /* align-items: center; */
+  }
+
+  .hero-content {
+    flex-direction: column;
+    gap: 3.2rem;
+  }
+
+  .hero-col_2 {
+    order: -1;
+  }
+
+  .hero-images {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero--client-img {
+    width: 12rem;
+  }
+
+  .primary-header {
+    text-align: center;
+  }
+
+  #landingPage > div > div.hero-col_1 > p {
+    text-align: center;
+  }
+
+  .hero--col-btns {
+    justify-content: center;
+  }
+
+  .open-hours .third-header {
+    font-size: 2.4rem;
+  }
+}
+
+/*BELOW 720px*/
+@media (max-width: 45em) {
+  .section--landing-page {
+    height: auto;
+  }
+
+  .hero-content {
+    background-image: none;
+  }
+
+  .hero-col_1 {
+    width: 80%;
+  }
+
+  .gallery-tablecost-container {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery .gallery-page {
+    margin: 0 auto;
+    max-width: 55rem;
+    height: 65rem;
+  }
+
+  .gallery-images {
+    width: 55rem;
+  }
+
+  .gallery-menu {
+    margin: 0 auto;
+  }
+
+  .tablecost {
+    background-size: contain;
+    background-position: right top 25px;
+    padding-bottom: 8rem;
+  }
+
+  .barber--info-container {
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  .barber-img img {
+    width: 28rem;
+  }
+  .barber-hours {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .open-hours {
+    margin-top: 5.2rem;
+  }
+}
+
+/*BELOW 608px*/
+@media (max-width: 38em) {
+  .admin--hello-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  .buttons-admin {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .editpages-nav {
+    flex-direction: column !important;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  .edit-box {
+    max-width: 100%;
+  }
+
+  .edit-box .secondary-header {
+    font-size: 3.2rem;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .edit--nav-btns {
+    flex-direction: column;
+  }
+
+  .edit--nav-panels {
+    width: 100% !important;
+  }
+
+  .zoomed-img {
+    width: 80%;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer--grid-column:last-child {
+    grid-column: 2;
+    justify-self: center;
+  }
+
+  .footer--grid-column {
+    gap: 1.6rem;
+  }
+}
+
+/*BELOW 480px*/
+@media (max-width: 30em) {
+  .hero-col_1 {
+    width: 100%;
+  }
+
+  .gallery .gallery-page {
+    max-width: 38rem;
+    height: 46rem;
+  }
+
+  .gallery-images {
+    width: 38rem;
+  }
+
+  #map {
+    width: 40rem;
+    height: 36rem;
+  }
+}

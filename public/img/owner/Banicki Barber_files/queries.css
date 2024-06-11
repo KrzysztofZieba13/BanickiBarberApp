@@ -1,0 +1,30 @@
+@media (max-width: 79em) {
+  .primary-header {
+    font-size: 4.4rem;
+  }
+
+  .hero--client-img {
+    width: 17rem;
+  }
+
+  .face-testimonial {
+    width: 3rem;
+  }
+
+  .testimonials-container {
+    max-width: 100rem;
+  }
+
+  .testimonials {
+    gap: 5.2rem;
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-btns {
+    margin-top: 3.2rem;
+  }
+
+  .testimonial {
+    justify-content: flex-start;
+  }
+}

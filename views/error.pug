@@ -1,0 +1,18 @@
+doctype html
+html
+  head 
+    include _head
+  body 
+    section.section-error
+      include _loginNav   
+      .error-container  
+        h3.third-header.error-header= title
+        - if(errorCode === 401)
+            p.text
+              = msg
+            p.text.error-text  
+              a(href='/login').btn-blue.link.error--login-link Zaloguj się
+        - else
+          p.text= msg
+            
+      

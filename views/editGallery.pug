@@ -1,0 +1,31 @@
+doctype html
+html
+  head 
+    include _head
+    
+  body 
+    section.section-edit
+      include _editNav
+
+      .edit-content 
+        .edit-box
+          h2.secondary-header Edycja Galerii
+          .edit-gallery
+            h4.fourth-header Usuwanie zdjęć
+            .gallery-page.edit--gallery-page
+            .gallery-menu
+              p(class='gallery-nav gallery--arrow-left')
+                ion-icon(name="arrow-back-outline") 
+              .gallery-dots
+              p.gallery-nav.gallery--arrow-right
+                ion-icon(name="arrow-forward-outline")
+            
+            .delete-container
+              p.amount-info Liczba zdjęc do usunięcia: 0
+              button#btnDeleteImages.btn--action-images.btn-blue Usuń
+
+            .add--images-container
+              h4.fourth-header Dodawanie zdjęć
+              .add-container
+                input.choose-images(type='file' multiple accept='image/*' id='add--images-input')
+                button#btnAddImages.btn--action-images.btn-blue Dodaj

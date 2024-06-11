@@ -1,0 +1,428 @@
+.section-edit {
+  max-width: 140rem;
+  padding: 1.2rem 3.2rem 3.2rem 3.2rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3.2rem;
+  height: 100%;
+}
+
+.editpages-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit--nav-btns {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.edit--nav-btns .link:link,
+.edit--nav-btns .link:visited {
+  font-size: 1.6rem;
+  padding: 1.6rem 3.2rem;
+  transition: all 0.3s;
+}
+
+.edit--nav-btns .link:hover,
+.edit--nav-btns .link:active {
+  background-color: #171a1d;
+}
+
+.edit-content {
+  margin-top: 5.2rem;
+}
+
+.edit-box {
+  box-shadow: 0px 0px 13px 7px rgba(19, 19, 19, 0.3);
+  width: 60rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 4.4rem 3.2rem;
+  gap: 4.4rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.form__label {
+  font-size: 1.6rem;
+  color: #868e96;
+}
+
+.form__input {
+  font-size: 1.6rem;
+  padding: 0.8rem;
+}
+
+.form__textarea {
+  height: 12rem;
+  font-size: 1.6rem;
+  padding: 0.8rem;
+}
+
+.btn-update {
+  background-color: #2e3192;
+  border: none;
+  font-size: 2.4rem;
+  cursor: pointer;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.edit-gallery .gallery-page .gallery-images {
+  margin-top: 0;
+  width: 30rem;
+}
+
+.edit--gallery-page {
+  height: 30rem;
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+.edit-gallery .gallery-menu {
+  width: 30rem;
+  margin: 0 auto;
+}
+
+.overlay-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-text {
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+.gallery-item {
+  position: relative;
+}
+
+.gallery-item:hover .overlay-img {
+  opacity: 1;
+}
+
+.delete-container,
+.add-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.4rem;
+  width: 60%;
+}
+
+.amount-info {
+  color: #868e96;
+  font-size: 1.2rem;
+}
+
+.btn--action-images,
+.btn--tablecost-action {
+  padding: 1.2rem 4.4rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #fff;
+  border: none;
+}
+
+.btn--action-images:hover {
+  background-color: #171a1d;
+}
+
+.add--images-container {
+  margin-top: 6.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.choose-images {
+  font-size: 1.6rem;
+}
+
+.edit--barber-upload {
+  display: flex;
+  align-items: center;
+  gap: 4.4rem;
+}
+
+.edit--upload-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.is--photo-info {
+  color: #868e96;
+  font-size: 1.2rem;
+}
+
+.edit--password-data {
+  margin-top: 5.2rem;
+}
+
+/******************/
+/* EDIT TABLECOST */
+/******************/
+.edit--tablecost-grid {
+  display: grid;
+  grid-template-columns: 4fr 2fr 1fr;
+  row-gap: 2.4rem;
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.edit--service-name {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* .edit--service-cost {
+  display: flex;
+  align-items: center;
+} */
+
+.edit--service-btns {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.edit--service-edit,
+.edit--service-remove,
+.edit--openhour-edit {
+  cursor: pointer;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  background-color: #2e3192;
+  font-size: 1.6rem;
+  padding: 0.8rem;
+  transition: all 0.3s;
+}
+
+.edit--service-edit:hover,
+.edit--service-remove:hover {
+  background-color: #171a1d;
+}
+
+.edit--openhours-grid {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  width: 70%;
+  font-size: 1.6rem;
+  color: #fff;
+  row-gap: 1.2rem;
+  align-items: center;
+}
+
+.howto--map-img {
+  margin-top: 1.2rem;
+}
+
+.howto--map-img img {
+  width: 100%;
+}
+
+.edit--coordinates-form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 2.4rem;
+}
+
+.edit__coordinates--form-group {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.edit--cordinates-label,
+.edit--route-label {
+  font-size: 1.6rem;
+  color: #868e96;
+}
+
+.edit__route--form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.edit--route-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.edit--coordinates-input {
+  width: 100%;
+}
+
+.btn--maproute-update,
+.btn--route-link-update {
+  background-color: #2e3192;
+  border: none;
+  padding: 1.2rem 3.2rem;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.6rem;
+}
+
+.btn--maproute-update:hover {
+  background-color: #171a1d;
+}
+
+.modal--form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2.4rem;
+  gap: 0.8rem;
+}
+
+.edit--close-modal {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 3.2rem;
+  cursor: pointer;
+}
+
+.edit--modal-info {
+  margin-bottom: 2.4rem;
+  font-size: 1.6rem;
+  color: #fff;
+  text-align: center;
+}
+
+.modal-label {
+  font-size: 1.2rem;
+}
+
+.modal_input {
+  font-size: 1.6rem;
+  padding: 0.4rem 1.2rem;
+}
+
+.modal--edit-btn {
+  font-size: 1.6rem;
+  color: #fff;
+  padding: 1.2rem 2.4rem;
+  border: none;
+  cursor: pointer;
+  background-color: #2e3192;
+}
+
+.modal--edit-btn:hover {
+  background-color: #171a1d;
+}
+
+.overlay-edit {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 9;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  backdrop-filter: blur(6px);
+}
+
+.edit--tablecost-modal,
+.edit--openhours-modal,
+.delete--tablecost-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 40rem;
+  background-color: #212529;
+  color: #868e96;
+  padding: 5.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.delete--modal-info {
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.delete--modal-info {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-bottom: 2.4rem;
+}
+
+.confirm-btns {
+  display: flex;
+  justify-content: center;
+  gap: 2.4rem;
+}
+
+.modal--form-group__checkbox {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 2.4rem;
+}
+/**********/
+/* ALERTS */
+/**********/
+.alert {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 9999;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-align: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 1.6rem 15rem;
+  -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+}
+.alert--success {
+  background-color: #20bf6b;
+}
+.alert--error {
+  background-color: #eb4d4b;
+}
+
+.modal--update-openhours {
+  display: flex;
+  flex-direction: column;
+}

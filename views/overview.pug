@@ -1,0 +1,142 @@
+doctype html
+html
+  head 
+    
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet' href='/css/general.css')
+    link(rel='stylesheet' href='/css/style.css')
+    link(rel='stylesheet' href='/css/queries.css')
+    link(rel='stylesheet' href='/css/admin.css')
+    link(rel="icon" type="image/x-icon" href="./img/background/logo.png")
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet")    
+    link(rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="")
+    script(type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer)
+    script(src="https://unpkg.com/@phosphor-icons/web" defer)
+    script(nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer)
+    script(src='./js/bundled/index.js' defer)
+    title Banicki Barber
+
+  body 
+    section.section--landing-page#landingPage 
+      include _header
+      .hero-content 
+        .hero-col_1
+          h1.primary-header= landingPage[0].title
+          p.text= landingPage[0].description 
+          .hero--col-btns 
+            .hero-col-btn__transparent 
+              a(class='hero-btn btn link' href='#gallery') Galeria
+            .hero-col-btn__blue
+                a(href=`${landingPage[0].bookingLink}` target='_blank' class='hero-btn btn btn-blue link') Rezerwacja
+        .hero-col_2
+          .hero-images
+            
+
+    section.testimonials-section#testimonials
+      .testimonials-container
+        .testimonials 
+          - for(let i = 0; i <= 2; i++)
+            .testimonial 
+              img(class='face-testimonial', src='./img/background/twarz1.png')
+              .testimonial-content 
+                p.testimonial-author= reviews[i].authorName
+                p.testimonial-text= reviews[i].text
+        .testimonials-btns
+          a(class='btn btn-blue leave-review link' target="_blank" href="https://search.google.com/local/writereview?placeid=ChIJhwLWPTz7PEcRUOC4G3m0Pnk") Zostaw opinię
+          a(class='more-testimionials link' target="_blank" href="https://www.google.com/search?safe=strict&sa=X&sca_esv=51c078bef5da6778&sca_upv=1&tbm=lcl&sxsrf=ADLYWILqXokd6C1r6d7PvUhF_8IHXUHkbQ:1715005916955&q=Banicki+Barber+Opinie&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxK2MDc2MzO0MDe1NLY0MbEwMTYw2cDI-IpR1CkxLzM5O1PBKbEoKbVIwb8gMy8zdRErdnEAFZAnWkoAAAA&rldimm=8736618759394484304&hl=pl-PL&ved=2ahUKEwi43d7znvmFAxUqIxAIHabwBHsQ9fQKegQIGBAF&biw=1756&bih=825&dpr=1.09#lkt=LocalPoiReviews&rlfi=hd:;si:8736618759394484304,l,ChVCYW5pY2tpIEJhcmJlciBPcGluaWVIwJTjgNWtgIAIWh0QAhgAGAEiFWJhbmlja2kgYmFyYmVyIG9waW5pZZIBC2JhcmJlcl9zaG9wmgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5TVVJqZHpZMmREbEJSUkFCqgFJEAEqCiIGb3BpbmllKAsyHhABIhrcyLfnhqxuyL7L824sWDR00nxRybwjSbaSYjIZEAIiFWJhbmlja2kgYmFyYmVyIG9waW5pZQ;mv:[[50.02714947731903,21.99183825219047],[50.02678952268097,21.99127794780954]]") Więcej opinii 
+            ion-icon(name="arrow-forward-outline")
+
+    section.gallery-tablecost-section 
+      img(class='zoomed-img hidden')
+      ion-icon(name="close-outline" class='cross hidden')
+      div(class='overlay hidden')
+      .gallery-tablecost-container#gallery
+        .gallery
+          span.subtitle Galeria
+          h2.secondary-header Stylizacje Klientów
+          .gallery-page
+          .gallery-menu(data-page='1') 
+            p(class='gallery-nav gallery--arrow-left')
+              ion-icon(name="arrow-back-outline") 
+            .gallery-dots
+            p.gallery-nav.gallery--arrow-right
+              ion-icon(name="arrow-forward-outline")
+        .tablecost#tablecost
+          span.subtitle Cennik
+          h2.secondary-header Koszt Usługi
+          .tablecost-content 
+            each service in landingPage[0].services
+              .service 
+                .service-name 
+                  p.service--name-pl= service.titlePL
+                  p.service--name-en= service.titleEN
+                .service-cost= `${service.price} zł`
+
+    section.contact-section
+      .contact-container
+        .contact--column-left#contact 
+          span.subtitle Kontakt
+          h2.secondary-header Skontaktuj Się
+          - const barber = landingPage[0].barber[0];
+          .barber-hours 
+            .barber--info-container
+              .barber-img 
+                img(class='barber-profile' src=`./img/owner/${barber.photo}` alt='Zdjęcie barbera') 
+              .contact-details 
+                .barber--name-container.contact-element
+                  span.contact-subtitle Barber 
+                  p.barber-name.barber-detail= `${barber.name} ${barber.surname}`
+                .barber--telephone-container.contact-element 
+                  span.contact-subtitle Telefon 
+                  p.barber-telephone.barber-detail= barber.telephoneNumber 
+                .barber--address-container.contact-element 
+                  span.contact-subtitle Adres 
+                  p.barber-address.barber-detail= barber.address
+            .open-hours
+              h3.third-header Godziny Otwarcia 
+              each day in landingPage[0].openHours
+                .openhours-container
+                  p.day= day.name
+                  p.hours= `${day.isClosed ? 'zamknięte' : `${day.openHour ? day.openHour : '00:00 '}-${day.closeHour ? day.closeHour : ' 00:00'}`}`
+        .contact--column-right#road
+          span.subtitle Trasa 
+          h2.secondary-header Jak Dotrzeć?
+          .map-container
+            p.map-address= barber.address
+            .map
+              div(id='map' data-location=`${JSON.stringify(landingPage[0].location)}`)  
+              a(class='btn-blue link map-btn' href=`${landingPage[0].location.routeLink}` target="_blank") Trasa
+
+    footer.footer 
+      .footer-container
+        .logo--socials-container 
+          .footer--logo-container
+            a(class='logo--footer-link link' href='#')
+              img(src='./img/background/logo1.png' class='logo--footer-img' alt='Logo Banicki Barber')
+          .socialmedia 
+            p Socialmedia
+            .socialmedia-icons 
+              a(href="#" class="link")
+                i.ph.ph-facebook-logo
+              a(href="#" class="link")
+                i.ph.ph-instagram-logo
+        .footer-grid      
+          .footer--grid-column
+            a(href="#landingPage" class="link footer--nav-link") Główna
+            a(href="#gallery" class="link footer--nav-link") Galeria
+            a(href="#testimonials" class="link footer--nav-link") Opinie
+          .footer--grid-column  
+            a(href="#contact" class="link footer--nav-link") Kontakt
+            a(href="#road" class="link footer--nav-link") Trasa
+            a(href=`${landingPage[0].bookingLink}` target='_blank' class="link footer--nav-link") Rezerwacja
+          .footer--grid-column
+            a(href="#landingPage" class="link footer--nav-link footer--go-up") 
+              span Do góry
+              ion-icon(name="arrow-up-outline")
+            p 
+            p.footer-license 
+              a(href="https://www.freepik.com/free-vector/vector-monochrome-collection-barbershop-tools_1215700.htm?fbclid=IwAR1J87QjFtR7S4dmhldgH-fr-zV3628ruI-ulr2Vw1s56FWEUEJYE6yf8Zs#query=Barber&position=0&from_view=search&track=sph&uuid=aa535727-95cc-45c8-8a68-9126ca188211" class="link footer-license") Image by vectorpocket on Freepik
+    
