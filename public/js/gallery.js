@@ -1,13 +1,12 @@
 /* eslint-disable */
-import axios from 'axios';
-
+import axios from "axios";
 let galleryImages;
-const galleryMenu = document.querySelector('.gallery-menu');
-const galleryPage = document.querySelector('.gallery-page');
-const galleryDots = document.querySelector('.gallery-dots');
-const zoomed = document.querySelector('.zoomed-img');
-const overlay = document.querySelector('.overlay');
-const cross = document.querySelector('.cross');
+const galleryMenu = document.querySelector(".gallery-menu");
+const galleryPage = document.querySelector(".gallery-pages");
+const galleryDots = document.querySelector(".gallery-dots");
+const zoomed = document.querySelector(".zoomed-img");
+const overlay = document.querySelector(".overlay");
+const cross = document.querySelector(".cross");
 let dotButtonsArray;
 let maxSlide;
 const images = [];
@@ -17,8 +16,8 @@ let curSlide = 0;
 export const getGalleryImages = async () => {
   try {
     const response = await axios({
-      method: 'get',
-      url: 'https://drkrzysztofzieba.usermd.net/api/v1/gallery/',
+      method: "get",
+      url: "/api/v1/gallery/",
     });
     images.push(...response.data.data.images);
     maxSlide = Math.ceil(images.length / 9);
@@ -34,8 +33,8 @@ export const getGalleryImages = async () => {
 };
 
 const insertHeroImages = function () {
-  if (window.location.pathname !== '/') return; // Poprawiony warunek
-  const heroImages = document.querySelector('.hero-images');
+  if (window.location.pathname !== "/") return; // Poprawiony warunek
+  const heroImages = document.querySelector(".hero-images");
 
   if (!heroImages) return; // Sprawdzamy czy kontener istnieje
 
@@ -59,18 +58,18 @@ const insertHeroImages = function () {
     .map(
       (el) => `
     <div class='hero-item'>
-      <img class='hero--client-img' src='https://drkrzysztofzieba.usermd.net/img/clients/${el}' alt='zdjęcie klienta' />
+      <img class='hero--client-img' src='/img/clients/${el}' alt='zdjęcie klienta' />
     </div>
   `
     )
-    .join('');
+    .join("");
 
   heroImages.innerHTML = heroHTML;
 };
 
 const insertImages = function () {
   const isEditGalleryPage =
-    window.location.pathname === '/admin/edycja-galeria';
+    window.location.pathname === "/admin/edycja-galeria";
 
   let galleryHTML = '<div class="gallery-images">';
 
@@ -81,24 +80,24 @@ const insertImages = function () {
 
     galleryHTML += `
       <div class='gallery-item'>
-        <img class='gallery-img' src='https://drkrzysztofzieba.usermd.net/img/clients/${el}' data-image='${el}' alt='zdjęcie klienta' />
+        <img class='gallery-img' src='/img/clients/${el}' data-image='${el}' alt='zdjęcie klienta' />
         ${
           isEditGalleryPage
             ? `
         <div class="overlay-img" data-image='${el}'>
           <ion-icon class="overlay-text" name="trash-outline"></ion-icon>
         </div>`
-            : ''
+            : ""
         }
       </div>
     `;
   });
 
-  galleryHTML += '</div>';
+  galleryHTML += "</div>";
 
-  galleryPage.insertAdjacentHTML('beforeend', galleryHTML);
+  galleryPage.insertAdjacentHTML("beforeend", galleryHTML);
 
-  galleryImages = document.querySelectorAll('.gallery-images');
+  galleryImages = document.querySelectorAll(".gallery-images");
 };
 
 const renderDots = function (dots) {
@@ -106,21 +105,21 @@ const renderDots = function (dots) {
     { length: dots },
     (_, i) => `
     <button class='gallery-dot ${
-      i === 0 ? 'gallery--dot-active' : ''
+      i === 0 ? "gallery--dot-active" : ""
     }' data-go-to='${i}'>
     </button>
   `
-  ).join('');
+  ).join("");
 
-  galleryDots.insertAdjacentHTML('beforeend', dotButtons);
+  galleryDots.insertAdjacentHTML("beforeend", dotButtons);
 
-  dotButtonsArray = document.querySelectorAll('.gallery-dot');
+  dotButtonsArray = document.querySelectorAll(".gallery-dot");
   dotButtonsArray.forEach((dot) =>
-    dot.addEventListener('click', function () {
+    dot.addEventListener("click", function () {
       dotButtonsArray.forEach((btn) =>
-        btn.classList.remove('gallery--dot-active')
+        btn.classList.remove("gallery--dot-active")
       );
-      this.classList.add('gallery--dot-active');
+      this.classList.add("gallery--dot-active");
       curSlide = this.dataset.goTo;
       goToSlide(this.dataset.goTo);
     })
@@ -131,9 +130,9 @@ const renderDots = function (dots) {
 const goToSlide = (slide) => {
   dotButtonsArray.forEach((dot, index) => {
     if (index === parseInt(slide)) {
-      dot.classList.add('gallery--dot-active');
+      dot.classList.add("gallery--dot-active");
     } else {
-      dot.classList.remove('gallery--dot-active');
+      dot.classList.remove("gallery--dot-active");
     }
   });
 
@@ -161,45 +160,37 @@ const prevSlide = () => {
 // Listen for menu actions
 if (galleryMenu) {
   galleryMenu
-    .querySelector('.gallery--arrow-right')
-    .addEventListener('click', nextSlide);
+    .querySelector(".gallery--arrow-right")
+    .addEventListener("click", nextSlide);
 
   galleryMenu
-    .querySelector('.gallery--arrow-left')
-    .addEventListener('click', prevSlide);
+    .querySelector(".gallery--arrow-left")
+    .addEventListener("click", prevSlide);
 }
 
 const zoomImageAfterClick = function () {
   if (!zoomed) return;
 
   let image;
-  galleryPage.addEventListener('click', function (e) {
-    if (e.target.closest('.gallery-img') === null) return;
+  galleryPage.addEventListener("click", function (e) {
+    if (e.target.closest(".gallery-img") === null) return;
 
-    image = e.target.closest('.gallery-img');
+    image = e.target.closest(".gallery-img");
     if (zoomed) {
-      zoomed.src = `https://drkrzysztofzieba.usermd.net/img/clients/${image.dataset.image}`;
-      overlay.classList.toggle('hidden');
-      zoomed.classList.toggle('hidden');
-      cross.classList.toggle('hidden');
+      zoomed.src = `/img/clients/${image.dataset.image}`;
+      overlay.classList.toggle("hidden");
+      zoomed.classList.toggle("hidden");
+      cross.classList.toggle("hidden");
     }
   });
-  overlay.addEventListener('click', (e) => {
-    e.target.classList.toggle('hidden');
-    zoomed.classList.toggle('hidden');
-    cross.classList.toggle('hidden');
+  overlay.addEventListener("click", (e) => {
+    e.target.classList.toggle("hidden");
+    zoomed.classList.toggle("hidden");
+    cross.classList.toggle("hidden");
   });
-  cross.addEventListener('click', (e) => {
-    e.target.classList.toggle('hidden');
-    zoomed.classList.toggle('hidden');
-    overlay.classList.toggle('hidden');
+  cross.addEventListener("click", (e) => {
+    e.target.classList.toggle("hidden");
+    zoomed.classList.toggle("hidden");
+    overlay.classList.toggle("hidden");
   });
 };
-
-// Init function
-// const init = async function () {
-//   if (!galleryPage) return;
-//   await getGalleryImages();
-// };
-
-// init();

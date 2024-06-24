@@ -3,7 +3,8 @@ html
   head 
     
     meta(charset='UTF-8')
-    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="format-detection" content="telephone=no")
     link(rel='stylesheet' href='/css/general.css')
     link(rel='stylesheet' href='/css/style.css')
     link(rel='stylesheet' href='/css/queries.css')
@@ -28,7 +29,7 @@ html
           p.text= landingPage[0].description 
           .hero--col-btns 
             .hero-col-btn__transparent 
-              a(class='hero-btn btn link' href='#gallery') Galeria
+              a(class='hero-btn btn link' href='/' id="landingPage--gallery-btn") Galeria
             .hero-col-btn__blue
                 a(href=`${landingPage[0].bookingLink}` target='_blank' class='hero-btn btn btn-blue link') Rezerwacja
         .hero-col_2
@@ -57,7 +58,29 @@ html
         .gallery
           span.subtitle Galeria
           h2.secondary-header Stylizacje Klientów
-          .gallery-page
+          .gallery-pages
+            //- .gallery-images
+            //-   .gallery-item
+            //-     img(src="/img/clients/chlop_1.jpeg", alt="chlop")
+            //-   .gallery-item
+            //-     img(src="/img/clients/chlop_1.jpeg", alt="chlop")
+            //-   .gallery-item
+            //-     img(src="/img/clients/chlop_1.jpeg", alt="chlop")
+            //-   .gallery-item
+            //-     img(src="/img/clients/chlop_1.jpeg", alt="chlop")
+            //-   .gallery-item
+            //-     img(src="/img/clients/chlop_1.jpeg", alt="chlop")
+            //-   .gallery-item
+            //-     img(src="/img/clients/chlop_1.jpeg", alt="chlop")
+            //-   .gallery-item
+            //-     img(src="/img/clients/chlop_1.jpeg", alt="chlop")
+            //-   .gallery-item
+            //-     img(src="/img/clients/chlop_1.jpeg", alt="chlop")
+            //-   .gallery-item
+            //-     img(src="/img/clients/chlop_1.jpeg", alt="chlop")
+            //- .gallery-images.dwa
+            //-   .gallery-item
+            //-     img(src="/img/clients/chlop_1.jpeg", alt="chlop")
           .gallery-menu(data-page='1') 
             p(class='gallery-nav gallery--arrow-left')
               ion-icon(name="arrow-back-outline") 
@@ -119,21 +142,21 @@ html
           .socialmedia 
             p Socialmedia
             .socialmedia-icons 
-              a(href="#" class="link")
+              a(href="https://www.facebook.com/banicki.barber" class="link")
                 i.ph.ph-facebook-logo
-              a(href="#" class="link")
+              a(href="https://www.instagram.com/banicki_barber/" class="link")
                 i.ph.ph-instagram-logo
         .footer-grid      
           .footer--grid-column
-            a(href="#landingPage" class="link footer--nav-link") Główna
-            a(href="#gallery" class="link footer--nav-link") Galeria
-            a(href="#testimonials" class="link footer--nav-link") Opinie
+            a(href="/" class="link footer--nav-link" id="landingPageFooter") Główna
+            a(href="/" class="link footer--nav-link" id="galleryFooter") Galeria
+            a(href="/" class="link footer--nav-link" id="reviewsFooter") Opinie
           .footer--grid-column  
-            a(href="#contact" class="link footer--nav-link") Kontakt
-            a(href="#road" class="link footer--nav-link") Trasa
+            a(href="/" class="link footer--nav-link" id="contactFooter") Kontakt
+            a(href="/" class="link footer--nav-link" id="routeFooter") Trasa
             a(href=`${landingPage[0].bookingLink}` target='_blank' class="link footer--nav-link") Rezerwacja
           .footer--grid-column
-            a(href="#landingPage" class="link footer--nav-link footer--go-up") 
+            a(href="/" class="link footer--nav-link footer--go-up" id="goUpFooter") 
               span Do góry
               ion-icon(name="arrow-up-outline")
             p 

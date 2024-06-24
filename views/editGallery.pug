@@ -12,12 +12,12 @@ html
           h2.secondary-header Edycja Galerii
           .edit-gallery
             h4.fourth-header Usuwanie zdjęć
-            .gallery-page.edit--gallery-page
+            .gallery-pages.edit--gallery-page
             .gallery-menu
-              p(class='gallery-nav gallery--arrow-left')
+              p(class='gallery-nav gallery--arrow-left gallery--edit-arrow')
                 ion-icon(name="arrow-back-outline") 
               .gallery-dots
-              p.gallery-nav.gallery--arrow-right
+              p.gallery-nav.gallery--arrow-right.gallery--edit-arrow
                 ion-icon(name="arrow-forward-outline")
             
             .delete-container
@@ -28,4 +28,4 @@ html
               h4.fourth-header Dodawanie zdjęć
               .add-container
                 input.choose-images(type='file' multiple accept='image/*' id='add--images-input')
-                button#btnAddImages.btn--action-images.btn-blue Dodaj
+                button#btnAddImages.btn--action-images.btn-blue Aktualizuj

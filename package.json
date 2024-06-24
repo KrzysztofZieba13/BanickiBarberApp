@@ -43,7 +43,8 @@
     "pug": "^3.0.2",
     "sharp": "^0.32.3",
     "validator": "^13.11.0",
-    "xss-clean": "^0.1.4"
+    "xss-clean": "^0.1.4",
+    "express-sslify": "^1.2.0"
   },
   "engines": {
     "node": ">=10.6.0"

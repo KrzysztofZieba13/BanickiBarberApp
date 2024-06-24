@@ -1,15 +1,15 @@
-const nodemailer = require('nodemailer');
+const nodemailer = require("nodemailer");
 
 module.exports = class Email {
   constructor(owner, url) {
-    this.to = '169652@stud.prz.edu.pl';
+    this.to = "banicki.barber@gmail.com";
     this.firstName = owner.name;
     this.url = url;
     this.from = `Mateusz Banicki <${owner.email}>`;
   }
 
   newTransport() {
-    if (process.env.NODE_ENV === 'production')
+    if (process.env.NODE_ENV === "production")
       return nodemailer.createTransport({
         host: process.env.BREVO_EMAIL_HOST,
         port: process.env.BREVO_EMAIL_PORT,
@@ -43,8 +43,8 @@ module.exports = class Email {
 
   async sendPasswordReset() {
     await this.send(
-      'passwordReset',
-      'Twój token do resetu hasła (ważny przez 10 minut)',
+      "passwordReset",
+      "Twój token do resetu hasła (ważny przez 10 minut)"
     );
   }
 };
