@@ -2,7 +2,7 @@ const nodemailer = require("nodemailer");
 
 module.exports = class Email {
   constructor(owner, url) {
-    this.to = "banicki.barber@gmail.com";
+    this.to = "barber@gmail.com";
     this.firstName = owner.name;
     this.url = url;
     this.from = `Mateusz Banicki <${owner.email}>`;
