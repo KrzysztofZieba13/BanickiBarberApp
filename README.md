@@ -1,2 +1,2 @@
 #BanickiBarberApp
-Aplikacja jest prostą wizytówką z możliwościa edycycji całej zawartości na stronie w tym dodawanie/usuwanie zdjęć.
+Aplikacja jest prostą wizytówką z możliwościa edycji całej zawartości na stronie w tym dodawanie/usuwanie zdjęć.
